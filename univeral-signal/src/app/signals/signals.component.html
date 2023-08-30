@@ -1,0 +1,19 @@
+<h1> Signals Components </h1>
+
+
+<div>
+    <p> Counter: {{ counter() }} </p>
+    <div>
+        <button type="button" mat-button color="primary" (click)="increment()">
+            Increment
+        </button>
+        <button type="button" mat-button color="primary" (click)="decrement()">
+            Decrement
+        </button> 
+    </div>
+</div>
+
+<h1>Action logs</h1>
+<mat-list>
+    <mat-list-item *ngFor="let action of actions()">{{action}}</mat-list-item>
+</mat-list>
