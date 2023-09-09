@@ -1,0 +1,33 @@
+<div style="padding: 80px;">
+  <div>
+    <h1>Animations </h1>
+    <p ngNonBindable>ngNonBindable Example{{ title}}</p>
+  </div>
+ 
+  <div>
+    <button mat-button color="primary" (click)="onAnimate()">Animate</button>
+    <button mat-button color="primary" (click)="onShrink()">Shrink</button>
+    <hr>
+    <div style="width: 100px; height: 100px;" [@divState]="state">
+    </div> <br>
+    <div style="width: 100px; height: 100px;" [@wildState]="wildState">
+    </div>
+  </div>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput type="text" #input >
+    </mat-form-field>
+    <button mat-button color="primary" (click)="onAdd(input.value)">Add Item</button>
+  </form>
+
+  <h1>List 1 :-- </h1>
+  <mat-list role="list" *ngFor="let item of itemList">
+    <mat-list-item role="listitem" (click) = "onDelete(item)" [@list1]>{{item}}</mat-list-item>
+  </mat-list>
+
+  <h1>List 2 :--</h1>
+  <mat-list role="list" *ngFor="let item of itemList">
+    <mat-list-item role="listitem"  (click) = "onDelete(item)" [@list2]>{{item}}</mat-list-item>
+  </mat-list>
+</div>
